@@ -1,10 +1,13 @@
-import React from 'react';
-import './styles.css';
+import React from 'react'
+import { Nav, Logo } from './NavbarElements'
+import logo from './logo.png'
 
 export const Navbar = () => {
-  return (
-      <div className="navbar">
-          <h1>Brayan</h1>
-      </div>
-  )
+    return (
+        <div>
+           <Nav> 
+                <img src={logo} style={{width: "50px"}}/> 
+           </Nav>
+        </div>
+    )
 }
