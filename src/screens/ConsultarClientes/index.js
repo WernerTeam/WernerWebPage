@@ -15,7 +15,7 @@ export const ConsultarClientes = () => {
               title="Código:"
               placeholder="Código do pedido de desenvolvimento"
             />
-            <Input title="Nome:" placeholder="Nome do cliente"/>
+            <Input title="Nome:" placeholder="Nome do cliente" />
           </div>
           <Input title="De" placeholder="dd/mm/yyyy" width="100px"/>
           <Input title="Até" placeholder="dd/mm/yyyy" width="100px"/>
