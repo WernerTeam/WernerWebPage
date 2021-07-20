@@ -1,12 +1,13 @@
 import React from "react";
-import { Background, PrimaryFont, Title } from "../../global/theme";
+import { Background, PrimaryFont } from "../../global/theme";
 import { Input } from "../../components/Input";
-import { Navbar } from "../../components/Navbar";
 import "../../App.css";
+import { Navbar } from "../../components/Navbar";
 
 export const ConsultarClientes = () => {
   return (
     <>
+    <Navbar/>
       <Background>
         <div style={{position: "absolute"}}>
             <PrimaryFont> Consultar Clientes</PrimaryFont>

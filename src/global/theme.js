@@ -4,6 +4,7 @@ export const PrimaryFont = styled.div`
     font-size: 24px;
     color: #ffffff;
     text-align: center;
+    padding-bottom: 20px;
 `
 export const SecundaryFont = styled.div`
     color: #111111;
@@ -20,7 +21,7 @@ export const Background = styled.div`
     height: 100%;
     position: absolute;
     justify-content: center;
-    padding-top: 30px;
+    padding-top: 40px;
     display: flex;
 `
 

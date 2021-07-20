@@ -1,6 +1,5 @@
 import React from "react";
 import { InputElement, Container, Title } from "./InputElements";
-import { PrimaryFont, SecundaryFont, TertiaryFont, Background } from '../../global/theme'
 
 export const Input = (props) => {
   return (
