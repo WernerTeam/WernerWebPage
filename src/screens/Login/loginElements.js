@@ -56,3 +56,11 @@ cursor: pointer;
       
       }
 `
+export const Msg = styled.div`
+justify-content: center;
+align-items: center;
+color: #ffffff;
+font-size: 10px;
+margin-left: 67px;
+margin-top: 8px;
+`

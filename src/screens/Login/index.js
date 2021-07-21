@@ -6,26 +6,44 @@ import {
   Logo,
   InputElement,
   Button,
+  Msg
 } from "./loginElements";
 import logo from "../../assets/logo.png";
-
 import { Menu } from "../../components/Menu";
-import { ConsultarClientes } from "../ConsultarClientes";
+import { api } from '../../services/api'
 
 export const Login = () => {
 
-  const [usuario, setUsuario] = useState("")
+  const [codigo, setCodigo] = useState("")
   const [senha, setSenha] = useState("")
+  const [dados, setDados] = useState()
+  const [negado, setNegado] = useState()
+
+
+    useEffect(() => {
+    api
+      .get("/representantes")
+      .then((response) => setDados(response.data))
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  }, []);
 
   const handleClick = () => {
-
-  if (usuario == senha) {
-    console.log("login feito com sucesso")
-  }
-  else {
-    console.log("usuario e senha negado")
-  }
-  
+    var valid = -1;
+	for (var i = 0; i < dados.length; i++) {
+		if (codigo == dados[i].codigo && senha == dados[i].senha) {
+			valid = i;
+			break;
+		}
+	}
+	if (valid != -1) {
+		console.log("Login efetuado com sucesso")
+    setNegado(false);
+	} else {
+    console.log("Usuario ou senha incorreto")
+     setNegado(true);
+	} 
 }
 
   return (
@@ -38,17 +56,18 @@ export const Login = () => {
           <div>
             <InputElement
               type="text"
-              placeholder="Usuário"
-              controlId="usuario"
-              onChange={(e) => setUsuario(e.target.value)}
+              placeholder="Código"
+              onChange={(e) => setCodigo(e.target.value)}
+              onKeyDown={handleClick} 
             />
             <InputElement
-              type="text"
+              type="password"
               placeholder="Senha"
-              controlId="senha"
               onChange={(e) => setSenha(e.target.value)}
+              onKeyDown={handleClick} 
             />
             <Button onClick={handleClick} style={{color: "#ffffff"}}>Entrar</Button>
+            {(negado) ?  <Msg> Código e/ou senha incorreto(s).</Msg> : ""}
             </div>
         </Block>
       </Container>
