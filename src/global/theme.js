@@ -41,7 +41,7 @@ cursor: pointer;
 `
 export const Block = styled.div`
     background-color: #ffffff;
-    height: 400px;
+    height: 350px;
     width: 250px;
     border-radius: 10px;
     box-shadow: 50px;
