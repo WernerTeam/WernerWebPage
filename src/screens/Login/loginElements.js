@@ -42,20 +42,6 @@ margin-top: 10px;
 margin-left: 30px;
 `
 
-export const Button = styled.button`
-background: #111111;
-border-radius: 30px;
-width: 160px;
-height: 33px;
-margin-top: 10px;
-margin-left: 55px;
-border: 0px;
-cursor: pointer;
-&:hover {
-      background-color: #343a40;
-      
-      }
-`
 export const Msg = styled.div`
 justify-content: center;
 align-items: center;

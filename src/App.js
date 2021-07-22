@@ -1,28 +1,19 @@
-import React, { useState} from 'react'
+import React from 'react'
 import './App.css';
-import { Navbar } from './components/Navbar'
 import { ConsultarClientes } from './screens/ConsultarClientes';
 import { Login } from './screens/Login'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Menu } from './screens/Menu'
+import {ConsultarDesenvolvimentos} from './screens/ConsultarDesenvolvimentos'
+import { Timeline } from './screens/Timeline'
 
 function App() {
-
-  const [teste, setTeste] = useState([])
-
-
-const OK = () => {
-  console.log(teste)
-}
-
   return ( 
        <div className="App">
-       <Login> </Login>
-    {/* <BrowserRouter>
-          <Switch>
-            <Route path='/' exact component={Login} />
-              <Route path='/Menu' component={Menu} />
-              </Switch>
-    </BrowserRouter> */}
+       {/* <Login> </Login> */}
+       {/* <Menu> </Menu> */}
+       {/* <ConsultarDesenvolvimentos> </ConsultarDesenvolvimentos> */}
+       {/* <ConsultarClientes></ConsultarClientes> */}
+       <Timeline> </Timeline>
     </div>
   );
 }

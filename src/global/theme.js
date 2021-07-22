@@ -25,3 +25,27 @@ export const Background = styled.div`
     display: flex;
 `
 
+export const Button = styled.button`
+background: #111111;
+border-radius: 30px;
+width: 160px;
+height: 33px;
+margin-top: 20px;
+margin-left: 55px;
+border: 0px;
+cursor: pointer;
+&:hover {
+      background-color: #343a40;
+      
+      }
+`
+export const Block = styled.div`
+    background-color: #ffffff;
+    height: 400px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 50px;
+    padding: 30px;
+    padding-top: 30px;
+    
+`

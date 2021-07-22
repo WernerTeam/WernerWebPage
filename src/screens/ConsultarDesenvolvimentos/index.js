@@ -4,22 +4,23 @@ import { Input } from "../../components/Input";
 import "../../App.css";
 import { Navbar } from "../../components/Navbar";
 
-export const ConsultarClientes = () => {
+export const ConsultarDesenvolvimentos = () => {
+  
+    const handleClick = () => {
 
-  const handleClick = () => {
-
-  }
-
-  return (
+    }
+  
+    return (
     <>
     <Navbar/>
       <Background>
-      <div>
-            <PrimaryFont> Consulta de Clientes</PrimaryFont>
+          <div>
+            <PrimaryFont> Consultar Desenvolvimentos</PrimaryFont>
             <Input
-              title="Nome:"
-              placeholder="Nome do cliente"
+              title="Código:"
+              placeholder="Código do pedido de desenvolvimento"
             />
+            <Input title="Nome:" placeholder="Nome do cliente" />
             <div style={{display: "flex"}}> 
           <Input title="De" placeholder="dd/mm/yyyy" width="120px"/>
           <Input title="Até" placeholder="dd/mm/yyyy" width="120px" marginLeft="10px"/>

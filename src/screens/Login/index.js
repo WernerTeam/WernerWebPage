@@ -5,12 +5,12 @@ import {
   Container,
   Logo,
   InputElement,
-  Button,
   Msg
 } from "./loginElements";
 import logo from "../../assets/logo.png";
-import { Menu } from "../../components/Menu";
 import { api } from '../../services/api'
+import { Button } from "../../global/theme";
+
 
 export const Login = () => {
 
@@ -22,7 +22,7 @@ export const Login = () => {
 
     useEffect(() => {
     api
-      .get("/representantes")
+      .get("/representantes/validar/{codigo}/{senha}")
       .then((response) => setDados(response.data))
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
@@ -30,14 +30,8 @@ export const Login = () => {
   }, []);
 
   const handleClick = () => {
-    var valid = -1;
-	for (var i = 0; i < dados.length; i++) {
-		if (codigo == dados[i].codigo && senha == dados[i].senha) {
-			valid = i;
-			break;
-		}
-	}
-	if (valid != -1) {
+   
+	if (dados) {
 		console.log("Login efetuado com sucesso")
     setNegado(false);
 	} else {
