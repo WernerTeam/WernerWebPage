@@ -3,6 +3,8 @@ import { Background, PrimaryFont, Button } from "../../global/theme";
 import { Input } from "../../components/Input";
 import "../../App.css";
 import { Navbar } from "../../components/Navbar";
+import { Link } from 'react-router-dom'
+
 
 export const ConsultarDesenvolvimentos = () => {
   
@@ -25,7 +27,9 @@ export const ConsultarDesenvolvimentos = () => {
           <Input title="De" placeholder="dd/mm/yyyy" width="120px"/>
           <Input title="Até" placeholder="dd/mm/yyyy" width="120px" marginLeft="10px"/>
           </div>
+          <Link to="/timeline">
           <Button onClick={handleClick} style={{color: "#ffffff"}}>Ok</Button>
+          </Link>
           </div>
       </Background>
     </>

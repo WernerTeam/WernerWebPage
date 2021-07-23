@@ -1,19 +1,25 @@
 import React from 'react'
 import './App.css';
-import { ConsultarClientes } from './screens/ConsultarClientes';
-import { Login } from './screens/Login'
+import { Timeline } from './screens/Timeline';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Login } from './screens/Login';
 import { Menu } from './screens/Menu'
-import {ConsultarDesenvolvimentos} from './screens/ConsultarDesenvolvimentos'
-import { Timeline } from './screens/Timeline'
+import { ConsultarClientes } from './screens/ConsultarClientes';
+import { ConsultarDesenvolvimentos } from './screens/ConsultarDesenvolvimentos';
 
 function App() {
   return ( 
        <div className="App">
-       {/* <Login> </Login> */}
-       {/* <Menu> </Menu> */}
-       {/* <ConsultarDesenvolvimentos> </ConsultarDesenvolvimentos> */}
-       {/* <ConsultarClientes></ConsultarClientes> */}
-       <Timeline> </Timeline>
+       <BrowserRouter>
+        <Switch>
+            <Route path="/" exact={true} component={Login} />
+            <Route path="/login" component={Login} />
+            <Route path="/menu" component={Menu} />
+            <Route path="/consultar-clientes" component={ConsultarClientes} />
+            <Route path="/desenvolvimentos" component={ConsultarDesenvolvimentos} />
+            <Route path="/timeline" component={Timeline} />
+        </Switch>
+    </ BrowserRouter>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import "../../App.css";
 import { Navbar } from "../../components/Navbar";
 import { Infos } from "../../components/InfosTimeline";
 import { Seta } from './timelineElements'
+
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;

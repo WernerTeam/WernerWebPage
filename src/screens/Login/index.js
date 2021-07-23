@@ -4,12 +4,12 @@ import {
   Background,
   Container,
   Logo,
-  InputElement,
-  Msg
+  InputElement
 } from "./loginElements";
 import logo from "../../assets/logo.png";
 import { api } from '../../services/api'
-import { Button } from "../../global/theme";
+import { Submit } from "../../global/theme";
+import { Link } from 'react-router-dom'
 
 
 export const Login = () => {
@@ -17,8 +17,7 @@ export const Login = () => {
   const [codigo, setCodigo] = useState("")
   const [senha, setSenha] = useState("")
   const [dados, setDados] = useState()
-  const [negado, setNegado] = useState()
-
+  const [autenticated, setAutenticated] = useState(false);
 
     useEffect(() => {
     api
@@ -26,18 +25,25 @@ export const Login = () => {
       .then((response) => setDados(response.data))
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
-      });
+      }
+      );
   }, []);
+
+  const handleSubmit = (evt) => {
+      evt.preventDefault();
+      if (autenticated) {
+        console.log("Login efetuado com sucesso")
+      alert(`Login efetuado com sucesso ${codigo} ${senha}`)
+
+      } else {
+        console.log("Usuario ou senha incorreto")
+      alert(`Usuario ou senha incorreto ${codigo} ${senha}`)
+      } 
+  }
 
   const handleClick = () => {
    
-	if (dados) {
-		console.log("Login efetuado com sucesso")
-    setNegado(false);
-	} else {
-    console.log("Usuario ou senha incorreto")
-     setNegado(true);
-	} 
+
 }
 
   return (
@@ -48,20 +54,26 @@ export const Login = () => {
         </Logo>
         <Block>
           <div>
+          <form onSubmit={handleSubmit}>
+            <label>
             <InputElement
               type="text"
               placeholder="Código"
-              onChange={(e) => setCodigo(e.target.value)}
-              onKeyDown={handleClick} 
+          value={codigo}
+          onChange={e => setCodigo(e.target.value)}
             />
             <InputElement
-              type="password"
+              type="text"
               placeholder="Senha"
-              onChange={(e) => setSenha(e.target.value)}
-              onKeyDown={handleClick} 
+              value={senha}
+              onChange={e => setSenha(e.target.value)}
             />
-            <Button onClick={handleClick} style={{color: "#ffffff"}}>Entrar</Button>
-            {(negado) ?  <Msg> Código e/ou senha incorreto(s).</Msg> : ""}
+            </label>
+          <Link to="/menu">
+            <Submit type="submit" value="Entrar" />
+            </Link>
+          </form>
+            {/* {(negado) ?  <Msg> Código e/ou senha incorreto(s).</Msg> : ""} */}
             </div>
         </Block>
       </Container>

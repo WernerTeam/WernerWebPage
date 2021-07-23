@@ -39,6 +39,23 @@ cursor: pointer;
       
       }
 `
+export const Submit = styled.input`
+background: #111111;
+border-radius: 30px;
+width: 160px;
+height: 33px;
+margin-top: 20px;
+margin-left: 55px;
+border: 0px;
+cursor: pointer;
+color: #ffffff;
+&:hover {
+      background-color: #343a40;
+      
+      }
+`
+
+
 export const Block = styled.div`
     background-color: #ffffff;
     height: 350px;
