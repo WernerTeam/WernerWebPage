@@ -21,8 +21,8 @@ export const ConsultarClientes = () => {
               placeholder="Nome do cliente"
             />
             <div style={{display: "flex"}}> 
-          <Input title="De" placeholder="dd/mm/yyyy" width="120px"/>
-          <Input title="Até" placeholder="dd/mm/yyyy" width="120px" marginLeft="10px"/>
+          <Input title="De" placeholder="dd/mm/yyyy" width="125px"/>
+          <Input title="Até" placeholder="dd/mm/yyyy" width="125px" marginLeft="10px"/>
           </div>
           <Button onClick={handleClick} style={{color: "#ffffff"}}>Ok</Button>
           </div>

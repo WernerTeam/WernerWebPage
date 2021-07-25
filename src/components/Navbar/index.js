@@ -6,7 +6,7 @@ export const Navbar = () => {
     return (
         <div>
            <Nav> 
-                <img src={logo} style={{width: "50px"}}/> 
+                <img src={logo} style={{width: "45px"}}/> 
            </Nav>
         </div>
     )

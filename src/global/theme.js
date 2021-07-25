@@ -34,6 +34,7 @@ margin-top: 20px;
 margin-left: 55px;
 border: 0px;
 cursor: pointer;
+font-size: 11px;
 &:hover {
       background-color: #343a40;
       
@@ -58,13 +59,12 @@ color: #ffffff;
 
 export const Block = styled.div`
     background-color: #ffffff;
-    height: 350px;
-    width: 250px;
+    height: 420px;
+    width: 300px;
     border-radius: 10px;
     box-shadow: 50px;
     padding: 30px;
     padding-top: 30px;
-    
 `
 export const styleAutocomplete = {
     height: "44px",

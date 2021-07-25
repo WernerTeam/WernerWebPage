@@ -5,32 +5,9 @@ import "../../App.css";
 import { Navbar } from "../../components/Navbar";
 import { Link } from 'react-router-dom'
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
-import { InputAutocomplete } from '../../components/InputAutocomplete'
+import { AutoComplete } from '../../components/InputAutocomplete'
 
 export const ConsultarDesenvolvimentos = () => {
-  
-  const items = [
-    {
-      id: 0,
-      name: 'Cobol'
-    },
-    {
-      id: 1,
-      name: 'JavaScript'
-    },
-    {
-      id: 2,
-      name: 'Basic'
-    },
-    {
-      id: 3,
-      name: 'PHP'
-    },
-    {
-      id: 4,
-      name: 'Java'
-    }
-  ]
 
     const handleClick = () => {
 
@@ -43,13 +20,12 @@ export const ConsultarDesenvolvimentos = () => {
           <div>
             <PrimaryFont> Consultar Desenvolvimentos</PrimaryFont>
             <div>
-            <InputAutocomplete title="Código:" placeholder={"Código do pedido de desenvolvimento"}/>
-
-          <InputAutocomplete title="Nome:" dados={items} placeholder={"Nome do cliente"}/>
+          <Input title="Código" placeholder="Código"/>
+          <Input title="Nome do Cliente" placeholder="Nome do Cliente"/>
           </div>
             <div style={{display: "flex"}}> 
-          <Input title="De" placeholder="dd/mm/yyyy" width="120px"/>
-          <Input title="Até" placeholder="dd/mm/yyyy" width="120px" marginLeft="10px"/>
+          <Input title="De" placeholder="dd/mm/yyyy" width="126px"/>
+          <Input title="Até" placeholder="dd/mm/yyyy" width="126px" marginLeft="10px"/>
           </div>
           <Link to="/timeline">
           <Button onClick={handleClick} style={{color: "#ffffff"}}>Ok</Button>

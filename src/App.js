@@ -6,9 +6,7 @@ import { Login } from './screens/Login';
 import { Menu } from './screens/Menu'
 import { ConsultarClientes } from './screens/ConsultarClientes';
 import { ConsultarDesenvolvimentos } from './screens/ConsultarDesenvolvimentos';
-import login from './screens/TesteLogin/Login'
-import dashboard from './screens/TesteLogin/dashboard'
-import { Teste } from './screens/TesteLogin/teste'
+import { Splash } from './screens/Splash'
 
 function App() {
   return ( 
@@ -18,7 +16,7 @@ function App() {
             <Route path="/" exact={true} component={Login} />
             <Route path="/login" component={Login} />
             <Route path="/menu" component={Menu} />
-            <Route path="/teste" component={Teste} />
+            <Route path="/splash" component={Splash} />
             <Route path="/consultar-clientes" component={ConsultarClientes} />
             <Route path="/desenvolvimentos" component={ConsultarDesenvolvimentos} />
             <Route path="/timeline" component={Timeline} />

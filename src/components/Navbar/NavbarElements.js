@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Nav = styled.nav`
     background-color: #ffffff;
-    height: 60px;
+    height: 70px;
     display: flex;
     justify-content: center;
     padding: 0.5rem calc((100vw - 1000px) / 2);

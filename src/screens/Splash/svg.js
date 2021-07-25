@@ -3,16 +3,16 @@ import './styles.css'
 
 export function SvgComponent(props) {
   return (
-    <div style={{ position: "absolute", width: "100%", height: "100%"}}>
+    <div style={{marginTop:"50px"}}>
     <svg
       id="Layer_1"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 373.87 421.97"
-      width={186.935}
-      height={210.985}
+      width={206.935}
+      height={230.985}
       // style={{position: "absolute"}}
-      style={{position:"absolute", top: "120px", right: "580px"}}
+      // style={{position:"absolute", top: "120px", right: "580px"}}
       {...props}
     >
       <defs>

@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const Background = styled.div`
     background-color: #ffffff;
     width: 100%;
-    height: 100%;
     justify-content: center;
     display: flex;
     position: absolute;
@@ -12,7 +11,7 @@ export const Background = styled.div`
 export const Block = styled.div`
     background-color: #799F00;
     border-radius: 10px;
-    box-shadow: 50px;
+    box-shadow: 10px;
     width: 272px;
     height: 198px;
     justify-content: center;

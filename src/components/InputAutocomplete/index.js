@@ -1,28 +1,67 @@
-import React from "react";
+/* eslint-disable no-use-before-define */
+import React from 'react';
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
-import { Title } from "../Input/InputElements";
 
+export const AutoComplete= ()=> {
+  const items = [
+    {
+      id: 0,
+      name: 'Cobol'
+    },
+    {
+      id: 1,
+      name: 'JavaScript'
+    },
+    {
+      id: 2,
+      name: 'Basic'
+    },
+    {
+      id: 3,
+      name: 'PHP'
+    },
+    {
+      id: 4,
+      name: 'Java'
+    }
+  ]
 
-export const InputAutocomplete = (props) => {
-  return (<>
-    <Title style={{marginLeft: 3, marginTop: 3, marginBottom: 1}}> {props.title}</Title>
-      <div style={{width: "280px", marginLeft: 3}}>
-      <div style={props.width}> 
-    <ReactSearchAutocomplete
-    items={props.dados}
-    styling= {{background: "#FFFFFF",
-      borderRadius: "5px",
-      border: 0,
-      width: "260px",
-      height: "37px",
-      fontSize: "13px",
-      boxShadow: "10px",
-    }}
-    showIcon={false}
-    placeholder={props.placeholder}
-    />
+  const handleOnSearch = (string, results) => {
+    // onSearch will have as the first callback parameter
+    // the string searched and for the second the results.
+    console.log(string, results)
+  }
+
+  const handleOnHover = (result) => {
+    // the item hovered
+    console.log(result)
+  }
+
+  const handleOnSelect = (item) => {
+    // the item selected
+    console.log(item)
+  }
+
+  const handleOnFocus = () => {
+    console.log('Focused')
+  }
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <div style={{ width: 400 }}>
+          <ReactSearchAutocomplete
+            items={items}
+            onSearch={handleOnSearch}
+            onHover={handleOnHover}
+            onSelect={handleOnSelect}
+            onFocus={handleOnFocus}
+            autoFocus
+          />
+        </div>
+      </header>
     </div>
-    </div>
-    </>
   )
-};
+}

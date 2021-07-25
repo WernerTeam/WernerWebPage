@@ -10,6 +10,8 @@ margin: 10px;
 background-color: #ffffff;
 color: #111111;
 box-shadow: 10px;
+font-weight: normal;
+font-size: 12px;
 &:hover {
       background-color: #EFEFEF;
       

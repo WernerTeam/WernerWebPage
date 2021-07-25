@@ -30,7 +30,7 @@ export const Timeline = () => {
             <Infos title="Data" info={Pessoa.data}> </Infos>
         <Seta status={Pessoa.status}/>
         </Block>
-        <Button onClick={handleClick} style={{color: "#ffffff", marginLeft: "135px"}}>Gerar documento</Button>
+        <Button onClick={handleClick} style={{color: "#ffffff", marginLeft: "130px"}}>Gerar documento</Button>
         </div>
       </Background>
     </>
