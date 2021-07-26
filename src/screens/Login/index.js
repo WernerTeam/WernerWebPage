@@ -10,7 +10,6 @@ import {
 import logo from "../../assets/logo.png";
 import { api } from '../../services/api'
 import { Submit } from "../../global/theme";
-import { Link } from 'react-router-dom'
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 
@@ -19,36 +18,28 @@ export const Login = () => {
   const [codigo, setCodigo] = useState("")
   const [senha, setSenha] = useState("")
   const [autenticated, setAutenticated] = useState(false);
-  const [token, setToken] = useState();
-  const [error, setError] = useState("");
+  const [erro, setErro] = useState(false);
   
-  useEffect(() => {
-
-  });
-
 const user_object = {
   username: codigo,
   password: senha
 };
 
-const endpoint = "http://localhost:8080/api/auth/signin";
-
 const handleSubmit = event => {
   event.preventDefault();
 
-axios.post(endpoint, user_object).then(res => {
-  localStorage.setItem("authorization", res.data.token);
-   setToken(res.data);
-   return handleRedirect();
-  // return alert("Token de login:" + token )
-  // return autenticado = true;
-  // return this.handleDashboard();
-});
-}
+axios.post(api+"/api/auth/signin", user_object)
+.then(res => {
+  const token = res.data
+  localStorage.setItem("token", token);
+  return setAutenticated(true)
+})
+.catch(
+  function (error) {
+    setErro(true)
+  }
 
-const handleRedirect = () => {
-
-  return setAutenticated(true);
+);
 }
 
   return (
@@ -77,6 +68,7 @@ const handleRedirect = () => {
             <Submit type="submit" value="Entrar" />
           </form>
             {(autenticated) ? <Redirect push to="/menu"/> : null }
+            {(erro) ? <Msg> Código e/ou Senha incorreto(a).</Msg> : null}
             </div>
         </Block>
       </Container>
