@@ -59,7 +59,7 @@ color: #ffffff;
 
 export const Block = styled.div`
     background-color: #ffffff;
-    height: 420px;
+    height: 390px;
     width: 300px;
     border-radius: 10px;
     box-shadow: 50px;
