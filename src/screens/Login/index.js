@@ -2,14 +2,14 @@ import React, {useState, useEffect} from "react";
 import {
   Block,
   Background,
-  Container,
   Logo,
   InputElement,
-  Msg
+  Msg,
+  Container 
 } from "./loginElements";
 import logo from "../../assets/logo.png";
 import { api } from '../../services/api'
-import { Submit } from "../../global/theme";
+import { Submit} from "../../global/theme";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 
@@ -43,8 +43,7 @@ axios.post(api+"/api/auth/signin", user_object)
 }
 
   return (
-    <Background>
-      <Container>
+      <Container> 
         <Logo>
           <img src={logo} style={{ width: "70px" }} />
         </Logo>
@@ -71,9 +70,7 @@ axios.post(api+"/api/auth/signin", user_object)
             {(erro) ? <Msg> Código e/ou Senha incorreto(a).</Msg> : null}
             </div>
         </Block>
-      </Container>
-    </Background>
+    <Background/> 
+    </Container>
   );
 };
-
-export default Login;

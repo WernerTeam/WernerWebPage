@@ -16,13 +16,11 @@ export const Seta = (props) => {
   );
 };
 
-
 export const Status1 = styled.div`
 font-size: 11px;
 position: absolute;
 color: black;
 font-weight: 600;
-
 `
 
 export const Status2 = styled.div`
@@ -47,7 +45,7 @@ export const Bolinha1 = styled.div`
     height: 15px;
     border-radius: 20px;
     position: absolute;
-    top: 371px;
+    top: 437px;
     margin-left: 45px;
 `
 export const Bolinha2 = styled.div`
@@ -56,7 +54,7 @@ export const Bolinha2 = styled.div`
     height: 15px;
     border-radius: 20px;
     position: absolute;
-    top: 371px;
+    top: 437px;
     margin-left: 115px;
 `
 export const Bolinha3 = styled.div`
@@ -65,7 +63,7 @@ width: 15px;
 height: 15px;
 border-radius: 20px;
 position: absolute;
-top: 371px;
+top: 437px;
 margin-left: 185px;
 `
 
@@ -76,3 +74,13 @@ export const Svg = () => {
 </svg>
   )
 }
+
+export const Container = styled.div`
+  margin: 0 auto;
+  width: 272px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`;

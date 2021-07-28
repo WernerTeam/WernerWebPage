@@ -3,8 +3,7 @@ import { Background, Button, Block } from "../../global/theme";
 import "../../App.css";
 import { Navbar } from "../../components/Navbar";
 import { Infos } from "../../components/InfosTimeline";
-import { Seta } from './timelineElements'
-
+import { Seta, Container } from './timelineElements'
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
@@ -22,7 +21,7 @@ export const Timeline = () => {
     return (
     <>
     <Navbar/>
-      <Background>
+    <Container>
           <div>
         <Block> 
             <Infos title="Cliente" info={Pessoa.nome}> </Infos>
@@ -32,7 +31,8 @@ export const Timeline = () => {
         </Block>
         <Button onClick={handleClick} style={{color: "#ffffff", marginLeft: "190px"}}>Gerar documento</Button>
         </div>
-      </Background>
+        <Background/>
+        </Container>
     </>
   );
 };

@@ -5,7 +5,8 @@ import { Navbar } from "../../components/Navbar";
 import { Link } from 'react-router-dom'
 import { api } from '../../services/api'
 import axios from "axios";
-import { Tabela } from "./tabela";
+import { LinhaPrincipal, Linhas, BordaInferior } from '../../components/Tabela'
+import { Container } from "./elements";
 
 export const ConsultarDesenvolvimentos = () => {
 
@@ -28,13 +29,69 @@ export const ConsultarDesenvolvimentos = () => {
   //      });
     }
   
-    
+
+    const pessoas = [{
+      nome: "Brayan",
+      codigo: "29483",
+      status: "L",
+      previsao: "23/11/2021"
+  },
+  {
+    nome: "Brayan",
+    codigo: "38492",
+    status: "L",
+    previsao: "23/11/2021"
+},
+{
+  nome: "Brayan",
+  codigo: "38452",
+  status: "L",
+  previsao: "23/11/2021"
+},
+{
+  nome: "Brayan",
+  codigo: "38494",
+  status: "L",
+  previsao: "23/11/2021"
+},
+{
+  nome: "Brayan",
+  codigo: "77492",
+  status: "L",
+  previsao: "23/11/2021"
+},
+{
+  nome: "Brayan",
+  codigo: "3822",
+  status: "L",
+  previsao: "23/11/2021"
+},
+{
+  nome: "Brayan",
+  codigo: "38442",
+  status: "L",
+  previsao: "23/11/2021"
+},
+{
+  nome: "Brayan",
+  codigo: "353",
+  status: "L",
+  previsao: "23/11/2021"
+},
+{
+  nome: "Brayan",
+  codigo: "463",
+  status: "L",
+  previsao: "23/11/2021"
+}]
 
     
+    // const numbers = ["Agatha", "19342", "L", "23/11/2021"];
+
     return (
     <>
     <Navbar/>
-      <Background>
+    <Container>
           <div>
             <PrimaryFont> Consultar Desenvolvimentos</PrimaryFont>
             <div>
@@ -45,12 +102,17 @@ export const ConsultarDesenvolvimentos = () => {
           <Input title="De" placeholder="dd/mm/yyyy" width="120px"/>
           <Input title="Até" placeholder="dd/mm/yyyy" width="120px" marginLeft="10px"/>
           </div>
-          <Link to="/timeline">
           <Button onClick={handleClick} style={{color: "#ffffff"}}>Ok</Button>
-          </Link>
-          <Tabela> </Tabela>
+          <div>
+            <LinhaPrincipal c1="Cliente" c2="Código" c3="Status" c4="Previsão"/>
+            {pessoas.map((pessoa)=> (
+            <Linhas key={pessoa.codigo} c1={pessoa.nome} c2={pessoa.codigo} c3={pessoa.status} c4={pessoa.previsao}/>
+            )) }
+             <BordaInferior/>
+        </div>
           </div>
-      </Background>
+          <Background/>
+          </Container>
     </>
   );
 };
