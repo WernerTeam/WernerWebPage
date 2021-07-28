@@ -1,28 +1,30 @@
-import React, {useEffect, useState} from 'react'
-import { SvgComponent } from './dashboard'
-import './styles.css'
-import { Redirect } from "react-router-dom";
+import Search from 'react-search'
+import React from 'react'
 
-export const Teste = () => {
+export const Teste =() => {
 
-const [opcao, setOpcao] = useState();
-const [desativar, setDesativar] = useState();
+  function HiItems(items) {
+    console.log(items)
+  }
 
-useEffect (() => {
-    setOpcao("active")
-    return <Redirect push to="/menu"/>
-  }, [desativar]);
+    let items = [
+      { id: 0, value: 'ruby' },
+      { id: 1, value: 'javascript' },
+      { id: 2, value: 'lua' },
+      { id: 3, value: 'go' },
+      { id: 4, value: 'julia' }
+    ]
 
+    return (
+      <div>
+        <Search items={items} />
 
-const ativar = () => {
-  setOpcao("active")
-}
-
-  return (
-    <div className="wrapper"> 
-    <SvgComponent className={opcao}> </SvgComponent>
-      <div class="controls">
-  </div>
-    </div>
-  )
-}
+        <Search items={items}
+                placeholder='Selecionar clientes'
+                maxSelected={1}
+                multiple={false}
+                // onItemsChanged={HiItems.bind(this)} 
+                />
+      </div>
+    )
+  }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { Background, PrimaryFont, Button, styleAutocomplete } from "../../global/theme";
 import { Input } from "../../components/Input";
 import { Navbar } from "../../components/Navbar";
@@ -10,6 +10,10 @@ import { Container } from "./elements";
 
 export const ConsultarDesenvolvimentos = () => {
 
+  const [visible, setVisible] = useState(false)
+  const [input, setInput] = useState()
+  const [dados, setDados] = useState([])
+
 
   // const token = localStorage.getItem("token")
 
@@ -17,76 +21,28 @@ export const ConsultarDesenvolvimentos = () => {
   //   headers: {"Authorization": `Bearer ${token}`}
   // }
 
+  useEffect(() => {
+    
+    axios.get(`http://ecommerce-api-penguin.herokuapp.com/cliente/${input}`)
+  .then(response => {
+      // If request is good...
+      setDados(response.data)
+   })
+  .catch((error) => {
+      console.log('error ' + error);
+   });
+  }, [input])
+
+  function handleChange(e) {
+    e.preventDefault();
+    setInput(e.target.value)
+  }
 
     const handleClick = () => {
-  //     axios.get(api+"/api/representantes", auth)
-  //     .then(response => {
-  //         // If request is good...
-  //         console.log(response.data);
-  //      })
-  //     .catch((error) => {
-  //         console.log('error ' + error);
-  //      });
+      if (!visible){
+       setVisible(true);
+      }
     }
-  
-
-    const pessoas = [{
-      nome: "Brayan",
-      codigo: "29483",
-      status: "L",
-      previsao: "23/11/2021"
-  },
-  {
-    nome: "Brayan",
-    codigo: "38492",
-    status: "L",
-    previsao: "23/11/2021"
-},
-{
-  nome: "Brayan",
-  codigo: "38452",
-  status: "L",
-  previsao: "23/11/2021"
-},
-{
-  nome: "Brayan",
-  codigo: "38494",
-  status: "L",
-  previsao: "23/11/2021"
-},
-{
-  nome: "Brayan",
-  codigo: "77492",
-  status: "L",
-  previsao: "23/11/2021"
-},
-{
-  nome: "Brayan",
-  codigo: "3822",
-  status: "L",
-  previsao: "23/11/2021"
-},
-{
-  nome: "Brayan",
-  codigo: "38442",
-  status: "L",
-  previsao: "23/11/2021"
-},
-{
-  nome: "Brayan",
-  codigo: "353",
-  status: "L",
-  previsao: "23/11/2021"
-},
-{
-  nome: "Brayan",
-  codigo: "463",
-  status: "L",
-  previsao: "23/11/2021"
-}]
-
-    
-    // const numbers = ["Agatha", "19342", "L", "23/11/2021"];
 
     return (
     <>
@@ -95,21 +51,28 @@ export const ConsultarDesenvolvimentos = () => {
           <div>
             <PrimaryFont> Consultar Desenvolvimentos</PrimaryFont>
             <div>
-          <Input title="Código" placeholder="Código"/>
-          <Input title="Nome do Cliente" placeholder="Nome do Cliente"/>
+          <Input title="Código" placeholder="Código" onChange={handleChange}/>
+          <Input title="Nome do Cliente" placeholder="Nome do Cliente" value={dados.nome}/>
           </div>
             <div style={{display: "flex"}}> 
           <Input title="De" placeholder="dd/mm/yyyy" width="120px"/>
           <Input title="Até" placeholder="dd/mm/yyyy" width="120px" marginLeft="10px"/>
           </div>
           <Button onClick={handleClick} style={{color: "#ffffff"}}>Ok</Button>
+          {/* <div style={{ display: visible ? "block" : "none" }}>
           <div>
-            <LinhaPrincipal c1="Cliente" c2="Código" c3="Status" c4="Previsão"/>
-            {pessoas.map((pessoa)=> (
-            <Linhas key={pessoa.codigo} c1={pessoa.nome} c2={pessoa.codigo} c3={pessoa.status} c4={pessoa.previsao}/>
+            <LinhaPrincipal c1="Cliente" c2="Código" c3="Status" c4="Data do Pedido" fontSize="10px"/>
+            {dados.map((pessoa)=> (
+            <Linhas key={pessoa.id} c1={pessoa.nome} c2={pessoa.cpf} c3={pessoa.usuario} c4={pessoa.dataNascimento}/>
             )) }
              <BordaInferior/>
-        </div>
+             </div>
+        </div> */}
+          <div style={{ display: visible ? "block" : "none" }}>
+            <LinhaPrincipal c1="Cliente" c2="Código" c3="Status" c4="Data do Pedido" fontSize="10px"/>
+        <Linhas key={dados.id} c1={dados.nome} c2={dados.cpf} c3={dados.usuario} c4={dados.dataNascimento}/>
+        <BordaInferior/>
+          </div>
           </div>
           <Background/>
           </Container>
