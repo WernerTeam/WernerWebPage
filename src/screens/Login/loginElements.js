@@ -24,12 +24,12 @@ export const Block = styled.div`
   justify-content: center;
   align-items: center;
   display: flex;
-`;
+`
 export const Logo = styled.div`
   margin-bottom: 40px;
   display: inline-block;
   text-align: center;
-`;
+`
 
 export const InputElement = styled.input`
   background: #ffffff;
@@ -41,13 +41,10 @@ export const InputElement = styled.input`
   box-shadow: 10px;
   padding-left: 10px;
   margin-top: 10px;
-`;
+`
 
 export const Msg = styled.div`
-  justify-content: center;
-  align-items: center;
   color: #ffffff;
   font-size: 10px;
-  margin-left: 67px;
   margin-top: 8px;
-`;
+`

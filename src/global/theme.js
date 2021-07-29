@@ -8,10 +8,9 @@ body {
 
 export const Container = styled.div`
   margin: 0 auto;
-  width: 272px;
+  width: 308px;
   margin-top: 50px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
 `
 
@@ -31,16 +30,6 @@ export const TertiaryFont = styled.div`
     font-size: 12;
     color: #838383;
 `
-
-// export const Background = styled.div`
-//     background-color: #799F00;
-//     width: 100%;
-//     height: 100%;
-//     position: absolute;
-//     justify-content: center;
-//     padding-top: 40px;
-//     display: flex;
-// `
 
 export const Button = styled.button`
 background: #111111;

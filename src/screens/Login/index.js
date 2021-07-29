@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {
   Block,
   Background,
@@ -12,7 +12,6 @@ import { api } from '../../services/api'
 import { Submit} from "../../global/theme";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 export const Login = () => {
 
