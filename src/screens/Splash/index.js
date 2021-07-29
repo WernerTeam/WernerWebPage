@@ -19,8 +19,11 @@ const ativar = () => {
 
   return (
       <>
-      <div style={{display: 'flex',justifyContent: "center", alignItems: "center", marginTop: "10%"}}> 
+      <div style={{display: "block"}}>
+      <div style={{display: 'flex',justifyContent: "center", alignItems: "center", marginTop: "10%", }}> 
     <SvgComponent className={opcao}> </SvgComponent>
+    <meta http-equiv="refresh" content="4;url=http://localhost:3000/menu" />
+    </div>
     </div>
     </>
   )

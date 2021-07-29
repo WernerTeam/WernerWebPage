@@ -9,8 +9,7 @@ body {
 export const Container = styled.div`
   margin: 0 auto;
   width: 272px;
-  margin-top: 100px;
-
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -78,22 +77,6 @@ export const Block = styled.div`
     width: 300px;
     border-radius: 10px;
     box-shadow: 50px;
-    padding: 30px;
+    /* padding: 30px; */
     padding-top: 30px;
 `
-export const styleAutocomplete = {
-    height: "44px",
-    border: "1px solid #dfe1e5",
-    borderRadius: "24px",
-    backgroundColor: "red",
-    boxShadow: "rgba(32, 33, 36, 0.28) 0px 1px 6px 0px",
-    hoverBackgroundColor: "#eee",
-    color: "#212121",
-    fontSize: "16px",
-    fontFamily: "Arial",
-    iconColor: "grey",
-    lineColor: "rgb(232, 234, 237)",
-    placeholderColor: "grey",
-    clearIconMargin: '3px 14px 0 0',
-    searchIconMargin: '0 0 0 16px'
-  };

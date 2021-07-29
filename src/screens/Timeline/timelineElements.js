@@ -1,13 +1,14 @@
 import React, {useState} from "react";
 import styled from "styled-components"
+import seta from '../../assets/seta.png'
 
 export const Seta = (props) => {
 
   return (
-    <div style={{marginTop: "100px", marginLeft: "17px"}}>
+    <div style={{marginTop: "60px", marginLeft: "10px"}}>
     <Status1> {(props.status == "C" | props.status == "E" | props.status == "L")  ? "Desenvolvimento": ""}</Status1> 
     <Status3> {(props.status == "L") ? "Preparando Entrega" : " "}</Status3> 
-      <Svg> </Svg>
+    <img src={seta} style={{marginTop: "40px"}}/>
     <Status2> {(props.status == "L" | props.status == "E") ? "Produção" : " "}</Status2> 
     {(props.status == "C" | props.status == "E" | props.status == "L") ? <Bolinha1/> : ""}
     {(props.status == "L" | props.status == "E") ? <Bolinha2/> : ""}
@@ -25,7 +26,7 @@ font-weight: 600;
 
 export const Status2 = styled.div`
 font-size: 11px;
-margin-top: 85px;
+margin-top: 35px;
 margin-left:100px;
 position: absolute;
 color: black;
@@ -33,7 +34,7 @@ font-weight: 600;
 `
 export const Status3 = styled.div`
 font-size: 11px;
-margin-left: 150px;
+margin-left: 130px;
 position: absolute;
 font-weight: 600;
 color: black;
@@ -45,7 +46,7 @@ export const Bolinha1 = styled.div`
     height: 15px;
     border-radius: 20px;
     position: absolute;
-    top: 437px;
+    top: 417px;
     margin-left: 45px;
 `
 export const Bolinha2 = styled.div`
@@ -54,7 +55,7 @@ export const Bolinha2 = styled.div`
     height: 15px;
     border-radius: 20px;
     position: absolute;
-    top: 437px;
+    top: 417px;
     margin-left: 115px;
 `
 export const Bolinha3 = styled.div`
@@ -63,7 +64,7 @@ width: 15px;
 height: 15px;
 border-radius: 20px;
 position: absolute;
-top: 437px;
+top: 417px;
 margin-left: 185px;
 `
 
