@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components"
 import seta from '../../assets/seta.png'
 
@@ -67,14 +67,6 @@ position: absolute;
 top: 417px;
 margin-left: 185px;
 `
-
-export const Svg = () => {
-  return (
-      <svg width="260" height="26" viewBox="0 0 241 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{position: "absolute", marginLeft: "0px", marginTop: "40px" }}>
-<path d="M2 10.5C1.17157 10.5 0.5 11.1716 0.5 12C0.5 12.8284 1.17157 13.5 2 13.5L2 10.5ZM240.061 13.0606C240.646 12.4749 240.646 11.5251 240.061 10.9393L230.515 1.39338C229.929 0.807592 228.979 0.807592 228.393 1.39338C227.808 1.97916 227.808 2.92891 228.393 3.5147L236.879 12L228.393 20.4853C227.808 21.071 227.808 22.0208 228.393 22.6066C228.979 23.1924 229.929 23.1924 230.515 22.6066L240.061 13.0606ZM2 13.5L239 13.5L239 10.5L2 10.5L2 13.5Z" fill="#111111"/>
-</svg>
-  )
-}
 
 export const Container = styled.div`
   margin: 0 auto;

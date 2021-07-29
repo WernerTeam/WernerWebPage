@@ -7,7 +7,6 @@ import { Menu } from './screens/Menu'
 import { ConsultarClientes } from './screens/ConsultarClientes';
 import { ConsultarDesenvolvimentos } from './screens/ConsultarDesenvolvimentos';
 import { Splash } from './screens/Splash'
-import { Teste } from './screens/TesteLogin/teste'
 
 function App() {
   return ( 
@@ -21,7 +20,6 @@ function App() {
             <Route path="/consultar-clientes" component={ConsultarClientes} />
             <Route path="/desenvolvimentos" component={ConsultarDesenvolvimentos} />
             <Route path="/timeline" component={Timeline} />
-            <Route path="/teste" component={Teste} />
         </Switch>
     </ BrowserRouter>
     </div>
